@@ -1,0 +1,56 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_006a3e10 .scope module, "bit32AND" "bit32AND" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 32 "out"
+    .port_info 1 /INPUT 32 "in1"
+    .port_info 2 /INPUT 32 "in2"
+o006a3fcc .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+o006a3fe4 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+L_01183480 .functor AND 32, o006a3fcc, o006a3fe4, C4<11111111111111111111111111111111>, C4<11111111111111111111111111111111>;
+v006a3ae0_0 .net *"_s2", 31 0, L_01183480;  1 drivers
+v0118ef78_0 .net "in1", 31 0, o006a3fcc;  0 drivers
+v01184860_0 .net "in2", 31 0, o006a3fe4;  0 drivers
+v011848b8_0 .net "out", 31 0, L_01183428;  1 drivers
+L_01183428 .part L_01183480, 0, 32;
+S_006a3ee0 .scope module, "tb32bitand" "tb32bitand" 2 13;
+ .timescale 0 0;
+v01184000_0 .var "IN1", 31 0;
+v01184058_0 .var "IN2", 31 0;
+v011833d0_0 .net "OUT", 31 0, L_011834c8;  1 drivers
+S_01184910 .scope module, "a1" "bit32OR" 2 16, 2 7 0, S_006a3ee0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 32 "out"
+    .port_info 1 /INPUT 32 "in1"
+    .port_info 2 /INPUT 32 "in2"
+L_01183520 .functor OR 32, v01184000_0, v01184058_0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v011849e0_0 .net *"_s2", 31 0, L_01183520;  1 drivers
+v01183ef8_0 .net "in1", 31 0, v01184000_0;  1 drivers
+v01183f50_0 .net "in2", 31 0, v01184058_0;  1 drivers
+v01183fa8_0 .net "out", 31 0, L_011834c8;  alias, 1 drivers
+L_011834c8 .part L_01183520, 0, 32;
+    .scope S_006a3ee0;
+T_0 ;
+    %vpi_call 2 19 "$monitor", $time, " Out = %h", v011833d0_0 {0 0 0};
+    %pushi/vec4 42405, 0, 32;
+    %store/vec4 v01184000_0, 0, 32;
+    %pushi/vec4 23130, 0, 32;
+    %store/vec4 v01184058_0, 0, 32;
+    %delay 100, 0;
+    %pushi/vec4 23130, 0, 32;
+    %store/vec4 v01184000_0, 0, 32;
+    %delay 400, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "alu_and_or.v";
