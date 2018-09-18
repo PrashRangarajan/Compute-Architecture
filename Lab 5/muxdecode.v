@@ -16,7 +16,7 @@ assign register[1] = ~reg_no[1] & reg_no[0];
 assign register[0] = ~reg_no[1] & ~reg_no[0];
 endmodule
 
-module tb_mux_dec;
+/* module tb_mux_dec;
 	reg [31:0] inp1, inp2, inp3, inp4;
 	reg [1:0] sel;
 	reg clk;
@@ -42,4 +42,4 @@ module tb_mux_dec;
 		
 	end
 	
-endmodule
+endmodule */

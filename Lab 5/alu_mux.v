@@ -67,7 +67,7 @@ module bit32_3to1mux(out, sel, in1, in2, in3);
 	bit32_4to1mux m(out, sel, in1, in2, in3, 32'b0000000000000000);
 endmodule
 
- module tb_32bit3to1mux;   
+/*  module tb_32bit3to1mux;   
 	reg [31:0] INP1, INP2, INP3;   
 	reg [1:0] SEL;   
 	wire [31:0] out;   
@@ -78,10 +78,10 @@ endmodule
 			INP1=32'b10101010101010101010101010101010;     
 			INP2=32'b01010101010101010101010101010101;    
 			INP3=32'b11010101010101010101010101010111;  
-			/* INP4=32'b00010101010101010101010101010100;  			 */
+			INP4=32'b00010101010101010101010101010100;
 			SEL=2'b00;     
 			#100 SEL=2'b01; 
 			#100 SEL=2'b10;  	
 			#1000 $finish;   
 		end 
-endmodule
+endmodule */

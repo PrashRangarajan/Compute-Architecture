@@ -10,7 +10,7 @@ module bit32OR (out,in1,in2);
 	assign {out}=in1 | in2; 
 endmodule 
 
-module tb32bitand;   
+/* module tb32bitand;   
 	reg [31:0] IN1,IN2;   
 	wire [31:0] OUT;   
 	bit32OR a1 (OUT,IN1,IN2);   
@@ -23,4 +23,4 @@ module tb32bitand;
 			#400 $finish;   
 		end
 endmodule 
-	
+	 */

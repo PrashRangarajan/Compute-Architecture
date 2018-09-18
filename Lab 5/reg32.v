@@ -24,7 +24,7 @@ generate for (j=0; j<32; j = j+1)
 endgenerate
 endmodule
 
-module tb32reg;
+/* module tb32reg;
 reg [31:0] d;
 reg clk,reset;
 wire [31:0] q;
@@ -41,4 +41,4 @@ initial
 		#20 d=32'hAFAFAFAF;
 		#200 $finish;
 	end
-endmodule
+endmodule */

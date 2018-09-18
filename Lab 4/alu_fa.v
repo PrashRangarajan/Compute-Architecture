@@ -24,7 +24,7 @@ module FA_32bit(Cout, Sum,In1,In2,Cin);
 	
 endmodule
 
-module tb32bitfa;   
+/* module tb32bitfa;   
 	reg [31:0] In1, In2;
 	reg Cin;
 	wire [31:0] Sum; 
@@ -39,5 +39,5 @@ module tb32bitfa;
 			#400 $finish;   
 		end
 endmodule 
-	
+	 */
 	
