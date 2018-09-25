@@ -35,7 +35,7 @@ module rf_tb;
 	
 	initial
 		begin
-		$monitor($time, " Read1 = %h, Read2 = %h, q1 = %h, clk = %b", ReadData1,ReadData2, r.q1, clk);
+		$monitor($time, " Read1 = %h, Read2 = %h, q1 = %h", ReadData1,ReadData2, r.q1);
 		#0 reset = 1'b0;
 		#0 clk = 1'b1;
 		#10 reset = 1'b1;
@@ -47,7 +47,7 @@ module rf_tb;
 		#5 WriteData = 32'hCFAFAFAF;
 		#5 RegWrite = 1'b1;
 		#5 ReadReg1 = 2'b00;
-		#5 ReadReg1 = 2'b01;
+		#5 ReadReg2 = 2'b01;
 		#20 $finish;
 		end
 
